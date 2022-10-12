@@ -13,9 +13,9 @@ public class CoreCompetency {
         nextId++;
     }
 
-    public CoreCompetency(String value) {
+    public CoreCompetency(String aValue) {
         this();
-        this.value = value;
+        this.value = aValue;
     }
 
     // Custom toString, equals, and hashCode methods:
@@ -40,5 +40,17 @@ public class CoreCompetency {
 
     // TODO: Use the "Generate" tool to add a getter and setter for the 'value' field but
     //  ONLY a getter for the 'id' field.
+    //Getter and Setters:
 
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
