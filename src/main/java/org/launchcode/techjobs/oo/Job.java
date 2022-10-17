@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo;
 
+import java.text.DecimalFormat;
 import java.util.Objects;
 
 public class Job {
@@ -44,6 +45,30 @@ public class Job {
         return Objects.hash(getId());
     }
 
+    @Override
+    public String toString() {
+        String employer;
+        String location;
+        String positionType;
+        String coreCompetency;
+        String defaultResponse = "Data not available";
+        if(this.name != null && this.name != ""){name = this.name;}else{name = defaultResponse;}
+        if(this.employer.getValue() != null && this.employer.getValue() != ""){employer = this.employer.getValue();}else{employer = defaultResponse;}
+        if(this.location.getValue() != null && this.location.getValue() != ""){location = this.location.getValue();}else{location = defaultResponse;}
+        if(this.positionType.getValue() != null && this.positionType.getValue() !=""){positionType = this.positionType.getValue();}else{positionType = defaultResponse;}
+        if(this.coreCompetency.getValue() != null && this.coreCompetency.getValue()!=""){coreCompetency = this.coreCompetency.getValue();}else{coreCompetency = defaultResponse;}
+
+        String formattedJob = "\nID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency + "\n"
+                ;
+
+
+        return formattedJob;
+    }
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
@@ -90,4 +115,6 @@ public class Job {
     public int getId() {
         return id;
     }
+
+
 }
